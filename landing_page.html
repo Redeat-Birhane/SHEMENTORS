@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>She Mentors</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #333;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: white;
+        align-items: center;
+      }
+      h1 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .hero-content p {
+        font-weight: normal;
+        font-size: 15px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo img {
+        width: 100px;
+        height: auto;
+      }
+
+      nav button {
+        margin-left: 10px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .sign-up {
+        background-color: #ddd;
+      }
+
+      .sign-in {
+        background-color: #6c63ff;
+        color: white;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 0px 20px;
+      }
+
+      .hero-content {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .hero-content img {
+        width: 500px;
+
+        border-radius: 0px 4px 4px 0px;
+      }
+
+      .cta {
+        background-color: #6c63ff;
+        color: white;
+        padding: 20px;
+        max-width: 300px;
+        text-align: left;
+      }
+
+      .cta button {
+        background-color: white;
+        color: #6c63ff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      .features {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .feature-cards {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .card {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        width: 250px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .explore-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 30px 20px;
+        margin-top: 40px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-logo img {
+        width: 100px;
+        height: auto;
+      }
+
+      .newsletter input {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+
+      .newsletter button {
+        background-color: #6c63ff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .footer-links a {
+        color: white;
+        margin-right: 10px;
+        text-decoration: none;
+      }
+
+      .social-icons a {
+        color: white;
+        margin-right: 10px;
+        font-size: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content {
+          flex-direction: column;
+        }
+
+        .feature-cards {
+          flex-direction: column;
+          align-items: center;
+        }.footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">
+  <img src="images/logo.jpg" alt="She Mentors Logo" />
+</div>
+<nav>
+  <button class="sign-up">Sign up</button>
+  <button class="sign-in">Sign in</button>
+</nav>
+</header>
+
+<section class="hero">
+<h1>She Mentors – Empowering Women in Tech</h1>
+<p>Find a mentor. Be a mentor. Grow together.</p>
+<div class="hero-content">
+  <img src="images/meeting.jpg" alt="Women meeting" />
+  <div class="cta">
+    <h2>Unlock Your Potential</h2>
+    <p>
+      Join SHE MENTOR today and experience the transformative power of
+      mentorship. Grow, learn, and succeed with the support of a vibrant
+      community.
+    </p>
+    <button>Join for free</button>
+  </div>
+</div>
+</section>
+
+<section class="features">
+<h2>Features</h2>
+<div class="feature-cards">
+  <div class="card">
+    <h3>Data Driven Pathways</h3>
+    <p>Tailored Experience</p>
+    <p>
+      Get customized mentorship plans that align with your career goals
+      and personal growth.
+    </p>
+  </div>
+  <div class="card">
+    <h3>One-to-One Sessions</h3>
+    <p>Live Workshops</p>
+    <p>
+      Participate in live sessions with industry experts and gain insights
+      from their experiences.
+    </p>
+  </div>
+  <div class="card">
+    <h3>Resource Library</h3>
+    <p>Comprehensive Guides</p>
+    <p>
+      Access a vast library of resources, including articles, videos, and
+      tutorials to support your learning journey.
+    </p>
+  </div>
+</div>
+<button class="explore-btn">Explore features</button>
+</section>
+
+<footer>
+<div class="footer-content">
+  <div class="footer-logo">
+    <img src="images/logo.jpg" alt="She Mentors Logo" />
+  </div>
+  <div class="newsletter">
+    <p>Subscribe to our newsletter</p>
+    <input type="email" placeholder="Input your email" />
+    <button>Subscribe</button>
+  </div>
+  <nav class="footer-links">
+    <a href="#">Pricing</a>
+    <a href="#">About us</a>
+    <a href="#">Features</a>
+    <a href="#">Help Center</a>
+    <a href="#">Contact us</a>
+    <a href="#">FAQs</a>
+    <a href="#">Careers</a>
+  </nav>
+</div>
+<p>&copy; 2024 Brand, Inc. • Privacy • Terms • Sitemap</p>
+</footer>
+</body>
+</html>
