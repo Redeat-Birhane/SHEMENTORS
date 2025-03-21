@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/mentee_dashboard.css" />
+    <title>Dashboard</title>
+    <style>
+      .calendar {
+        background-color: #fff;
+        padding: 10px;
+        border: 2px solid #3f51b5; /* Blue border */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 250px;
+      }
+
+      .calendar h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #3f51b5;
+      }
+
+      .days,
+      .dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        text-align: center;
+      }
+
+      .days span {
+        font-weight: bold;
+        color: #555;
+      }
+
+      .dates span {
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      .dates span:hover {
+        background-color: #f0f0f0;
+      }
+
+      .current-day {
+        background-color: #3f51b5;
+        color: white;
+      }
+
+      .inactive-day {
+        color: #ccc;
+      }
+
+      .calendars {
+        display: flex;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Logo" />
+      </div>
+      <ul class="nav-links">
+        <li>Dashboard</li>
+        <li>Find Mentor</li>
+        <li>Messages</li>
+        <li>Tasks</li>
+        <li>Analytics</li>
+        <li>Profile</li>
+        <li>Settings</li>
+      </ul>
+      <div class="profile-pic">
+        <img src="images/mentee1.jpg" alt="Profile Picture" />
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="quote-banner">
+        <p>
+          <strong
+            >The bad news is time flies, the good news is you're the
+            pilot</strong
+          >
+        </p>
+        <span>— Michael Altshuler</span>
+      </div>
+
+      <!-- Suggested Mentors -->
+      <div class="section">
+        <h2>Suggested mentors</h2>
+        <div class="mentors">
+          <div class="mentor-card">
+            <img src="images/mentor1.jpg" alt="Mentor 1" />
+            <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+            <p>She always makes time for harder things...</p>
+          </div>
+          <div class="mentor-card">
+            <img src="images/mentee2.jpg" alt="Mentor 2" />
+            <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+            <p>She is an excellent mentor who engages you in...</p>
+          </div>
+          <div class="mentor-card">
+            <img src="images/mentee3.jpg" alt="Mentor 3" />
+            <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+            <p>She knows what could teach us a new thing...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Sessions -->
+      <div class="section">
+        <h2>Upcoming sessions</h2>
+        <div class="calendars">
+          <div class="calendar" id="calendar1"></div>
+          <div class="calendar" id="calendar2"></div>
+        </div>
+      </div>
+
+      <!-- Progress Tracker -->
+      <div class="section">
+        <h2>Progress Tracker</h2>
+        <div class="progress-item">
+          <span>📚 Library Management</span>
+          <select>
+            <option>Dropdown</option>
+          </select>
+        </div>
+        <div class="progress-item">
+          <span>💰 Budget Tracker and Bill Splitter</span>
+          <select>
+            <option>Dropdown</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function generateCalendar(calendarId, year, month) {
+        const calendar = document.getElementById(calendarId);
+        const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        // Clear previous content
+        calendar.innerHTML = "";
+        // Add Month and Year
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        calendar.innerHTML += <h3>${monthNames[month]} ${year}</h3>;
+
+        // Add days of the week
+        const daysContainer = document.createElement("div");
+        daysContainer.classList.add("days");
+        daysOfWeek.forEach((day) => {
+          daysContainer.innerHTML += <span>${day}</span>;
+        });
+        calendar.appendChild(daysContainer);
+
+        // Get the first day of the month and number of days in the month
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        const datesContainer = document.createElement("div");
+        datesContainer.classList.add("dates");
+
+        // Add empty slots for days before the first day
+        for (let i = 0; i < firstDay; i++) {
+          datesContainer.innerHTML += <span class="inactive-day"></span>;
+        }
+
+        // Add actual days
+        for (let day = 1; day <= daysInMonth; day++) {
+          const today = new Date();
+          const isToday =
+            day === today.getDate() &&
+            month === today.getMonth() &&
+            year === today.getFullYear();
+
+          datesContainer.innerHTML += `<span class="${
+            isToday ? "current-day" : ""
+          }">${day}</span>`;
+        }
+
+        calendar.appendChild(datesContainer);
+      }
+
+      // Generate current month and next month calendars
+      const today = new Date();
+      generateCalendar("calendar1", today.getFullYear(), today.getMonth());
+      generateCalendar("calendar2", today.getFullYear(), today.getMonth() + 1);
+    </script>
+  </body>
+</html>
